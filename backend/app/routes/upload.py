@@ -15,6 +15,11 @@ async def upload_file(file: UploadFile = File(...)):
     findings = detect_pii(text)
     risk = calculate_risk(findings)
 
+    print("File received:", file.filename)
+    print("Extracted text length:", len(text))
+    print("Total findings:", len(findings))
+    print("Risk score:", risk["risk_score"])
+
     return {
         "filename": file.filename,
         "text_preview": text[:500],
@@ -23,3 +28,5 @@ async def upload_file(file: UploadFile = File(...)):
         "risk_level": risk["risk_level"],
         "findings": findings
     }
+
+
