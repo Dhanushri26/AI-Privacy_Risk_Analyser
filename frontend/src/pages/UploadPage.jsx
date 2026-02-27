@@ -1,14 +1,20 @@
 import { useState } from "react";
 import { uploadFile, redactText } from "../api";
 
-import AppLayout from "../layout/AppLayout";
 import FileUploadZone from "../components/FileUploadZone";
 import RiskSummaryCards from "../components/RiskSummaryCards";
 import RiskProgressBar from "../components/RiskProgressBar";
-import FindingsList from "../components/FindingsList";
 import RedactionPanel from "../components/RedactionPanel";
-
+import FindingsList from "../components/FindingsList";
 export default function UploadPage() {
+  return (
+    <section id="upload-section">
+      <UploadPageContent />
+    </section>
+  );
+}
+
+function UploadPageContent() {
   const [result, setResult] = useState(null);
   const [dragActive, setDragActive] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -27,7 +33,7 @@ export default function UploadPage() {
   };
 
   return (
-    <AppLayout>
+    <div className="py-6 px-4 mx-auto">
       <FileUploadZone
         dragActive={dragActive}
         handleDrop={(e) => {
@@ -61,6 +67,6 @@ export default function UploadPage() {
           </div>
         </div>
       )}
-    </AppLayout>
+    </div>
   );
 }

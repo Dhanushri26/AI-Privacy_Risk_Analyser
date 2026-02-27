@@ -26,8 +26,8 @@ const HeroSection = () => {
         ),
         
         React.createElement("a", {
-          href: "#analyze",
-          className: "inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110 glow-border animate-fade-up",
+          href: "#upload-section",
+          className: "inline-flex items-center gap-2 rounded-lg bg-[#1999a0] text-white hover:bg-[#16848a] px-8 py-3.5 text-sm font-semibold  transition-all hover:brightness-110 glow-border animate-fade-up",
           style: { animationDelay: '0.3s' }
         },
           React.createElement(Shield, { className: "h-4 w-4" }),
