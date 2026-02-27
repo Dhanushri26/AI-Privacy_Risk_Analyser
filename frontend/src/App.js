@@ -1,16 +1,27 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Topbar from "./layout/Topbar";
 import HeroSection from "./components/HeroSection";
 import HowItWorks from "./components/HowItWorks";
 import UploadPage from "./pages/UploadPage";
 
-function App() {
+function LandingPage() {
   return (
     <>
-      <Topbar />
       <HeroSection />
       <HowItWorks />
-      <UploadPage />
     </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Topbar />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/analyze" element={<UploadPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

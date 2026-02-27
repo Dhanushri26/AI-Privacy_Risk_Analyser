@@ -13,8 +13,7 @@ def calculate_risk(findings):
     score = 0
 
     for item in findings:
-        score += weights.get(item["type"], 0)
-
+        score += weights.get(item["category"], 0)
     if score > 100:
         score = 100
 

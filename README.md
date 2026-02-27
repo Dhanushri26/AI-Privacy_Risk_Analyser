@@ -146,24 +146,6 @@ http://localhost:3000
 
 ---
 
-# 📦 Production Deployment (Optional)
-
-## Backend (Production Mode)
-
-uvicorn app.main:app --host 0.0.0.0 --port 8000
-
-## Frontend Build
-
-npm run build
-
-Deploy the build folder to:
-- Vercel
-- Netlify
-- Firebase
-- AWS / Azure
-
----
-
 # 📌 Notes
 
 - Always start backend before frontend.
@@ -175,3 +157,5 @@ Deploy the build folder to:
 # 👩‍💻 Project Purpose
 
 AI-driven system for identifying privacy risks in documents and presenting results in a professional analytical dashboard interface.
+
+

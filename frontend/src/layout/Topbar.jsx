@@ -1,20 +1,46 @@
 import { Shield } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 export default function Topbar() {
   return (
-    <div className="bg-white shadow-sm px-8 py-2 flex justify-between">
-            <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 border border-primary/20">
-            <Shield className="h-5 w-5 text-primary" />
+    <div className="bg-white border-b border-slate-200 px-8">
+      <div className="flex h-16 items-center justify-between max-w-7xl mx-auto">
+
+        <div className="flex items-center gap-3">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-100 border border-teal-200">
+            <Shield className="h-5 w-5 text-teal-600" />
           </div>
-          <span className="font-heading text-lg font-bold tracking-tight">
-            Priv<span className="text-primary">Guard</span>
+          <span className="text-lg font-bold tracking-tight text-slate-800">
+            Priv<span className="text-teal-600">Guard</span>
           </span>
         </div>
-        <nav className="flex items-center gap-6">
-          <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</a>
-          <a href="#analyze" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Analyze</a>
+
+        <nav className="flex items-center gap-8">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `text-sm font-medium transition-colors ${
+                isActive
+                  ? "text-teal-600"
+                  : "text-slate-500 hover:text-slate-800"
+              }`
+            }
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/analyze"
+            className={({ isActive }) =>
+              `text-sm font-medium transition-colors ${
+                isActive
+                  ? "text-teal-600"
+                  : "text-slate-500 hover:text-slate-800"
+              }`
+            }
+          >
+            Analyze
+          </NavLink>
         </nav>
       </div>
     </div>

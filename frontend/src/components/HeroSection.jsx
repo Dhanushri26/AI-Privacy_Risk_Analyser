@@ -1,13 +1,12 @@
-import { Shield, Lock, Eye, Zap } from "lucide-react";
+import { Shield,Zap } from "lucide-react";
 import React from "react";
+import { Link } from "react-router-dom";
 const HeroSection = () => {
+  
   return (
     React.createElement("section", { className: "relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16" },
-      /* Grid background */
       React.createElement("div", { className: "absolute inset-0 grid-pattern opacity-40" }),
-      
-      /* Radial glow */
-      React.createElement("div", { className: "absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" }),
+            React.createElement("div", { className: "absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" }),
       
       React.createElement("div", { className: "container relative z-10 text-center max-w-4xl mx-auto px-4" },
         React.createElement("div", { className: "inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 mb-8 animate-fade-up" },
@@ -25,16 +24,15 @@ const HeroSection = () => {
           "Upload any document and our AI instantly identifies PII exposure, compliance gaps, and data vulnerabilities — so you can fix them first."
         ),
         
-        React.createElement("a", {
-          href: "#upload-section",
-          className: "inline-flex items-center gap-2 rounded-lg bg-[#1999a0] text-white hover:bg-[#16848a] px-8 py-3.5 text-sm font-semibold  transition-all hover:brightness-110 glow-border animate-fade-up",
-          style: { animationDelay: '0.3s' }
-        },
+        React.createElement(Link, {
+  to: "/analyze",
+  className: "inline-flex items-center gap-2 rounded-lg bg-[#1999a0] text-white hover:bg-[#16848a] px-8 py-3.5 text-sm font-semibold transition-all hover:brightness-110 glow-border animate-fade-up",
+  style: { animationDelay: '0.3s' }
+},
           React.createElement(Shield, { className: "h-4 w-4" }),
           "Start Analysis"
         ),
 
-        /* Stats */
         React.createElement("div", { className: "grid grid-cols-3 gap-8 mt-20 max-w-lg mx-auto animate-fade-up", style: { animationDelay: '0.4s' } },
           [
             { value: "50+", label: "Risk Patterns" },
